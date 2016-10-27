@@ -3,6 +3,15 @@ using System.Collections;
 
 public class CubeBehaviour : MonoBehaviour
 {
+    void Start()
+    {
+        var graph = GetComponent<GraphComponent>();
+        if (null != graph)
+        {
+            graph.SetLineColor("y", new Color(1.0f, 0.0f, 0.0f, 0.75f));
+        }
+    }
+
     void Update ()
     {
         var pos = transform.position;
@@ -15,7 +24,7 @@ public class CubeBehaviour : MonoBehaviour
         var graph = GetComponent<GraphComponent>();
         if( null != graph )
         {
-            graph.AddValue("position_y", transform.position.y);
+            graph.AddValue("y", transform.position.y);
         }
     }
 }
